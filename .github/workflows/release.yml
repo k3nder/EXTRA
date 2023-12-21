@@ -22,10 +22,17 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '17'
+    - name: Instalar xmlstarlet
+      run: sudo apt-get update && sudo apt-get install -y xmlstarlet
 
+    - name: Leer Archivo XML
+      run: |
+        # Lee el contenido XML y realiza operaciones según sea necesario
+        V=$(xmlstarlet sel -t -v "/project/version" -n pom.xml)
+        echo "VERSION=$V" >> $env:GITHUB_ENV
     - name: Check for Release
       run: |
-        VERSION=$(grep -oP '<version>\K[^<]+' pom.xml)
+        VERSION=${{ env.VERSION }}
         if [ ! -z "$VERSION" ]; then
           if ! git rev-list "$VERSION" &>/dev/null; then
             YEAR_MONTH=$(date +'%Y%m')
