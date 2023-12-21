@@ -37,7 +37,6 @@ jobs:
     - name: Check for Release
       run: |
         echo ${{ env.VERSION }}
-        $VERSION=${{ env.VERSION }}
         if [ ! -z "$VERSION" ]; then
           if ! git rev-list "$VERSION" &>/dev/null; then
             YEAR_MONTH=$(date +'%Y%m')
