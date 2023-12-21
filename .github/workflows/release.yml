@@ -28,20 +28,16 @@ jobs:
         VERSION=$(grep -oP '<version>\K[^<]+' pom.xml)
         if [ ! -z "$VERSION" ]; then
           if ! git rev-list "$VERSION" &>/dev/null; then
-            ${{ env.VERSION }}=$VERSION
             YEAR_MONTH=$(date +'%Y%m')
             echo $YEAR_MONTH
-            ${{ env.DATA }}=$YEAR_MONTH
+            echo "DATA=$YEAR_MONTH" >> $env:GITHUB_ENV
+            echo "VERSION=$VERSION" >> $env:GITHUB_ENV
           else
             echo "Release $VERSION already exists."
           fi
         else
           echo "No version found in pom.xml."
         fi
-    - name: content test
-      run: | 
-          echo ${{ env.DATA }}
-          echo ${{ env.VERSION }}
     - name: create release
       if: ${{ env.DATA != 'nuller' && env.VERSION != 'nuller' }}
       uses: softprops/action-gh-release@v1
