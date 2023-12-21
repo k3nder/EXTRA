@@ -26,7 +26,7 @@ jobs:
     
     - name: Leer Archivo XML
       run: |
-        version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        version= mvn help:evaluate -Dexpression=project.version -q -DforceStdout
         # Imprimir la versión
         echo "La versión del artefacto es: $version"
         echo "VERSION=$version" >> $env:GITHUB_ENV
