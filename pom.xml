@@ -20,13 +20,6 @@
     </developer>
   </developers>
 
-  <repositories>
-    <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/k3nder/javaprojects</url>
-    </repository>
-  </repositories>
-
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,10 +29,10 @@
 
   <dependencies>
     <dependency>
-      <groupId>net.kristian</groupId>
-      <artifactId>java-utils</artifactId>
-      <version>1.0.0</version>
-    </dependency>
+  <groupId>net.kender</groupId>
+  <artifactId>kutils</artifactId>
+  <version>0.1.0</version>
+</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
