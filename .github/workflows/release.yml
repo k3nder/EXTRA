@@ -38,7 +38,10 @@ jobs:
         else
           echo "No version found in pom.xml."
         fi
-        
+    - name: content test
+      run: | 
+          echo ${{ env.DATA }}
+          echo ${{ env.VERSION }}
     - name: create release
       if: ${{ env.DATA != 'nuller' && env.VERSION != 'nuller' }}
       uses: softprops/action-gh-release@v1
