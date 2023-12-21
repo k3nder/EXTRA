@@ -19,6 +19,12 @@
       <organization>Beatriu fajardo mendoza</organization>
     </developer>
   </developers>
+  <repositories>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/k3nder/kutils</url>
+    </repository>
+</repositories>
 
 
   <properties>
