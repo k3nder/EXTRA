@@ -1,0 +1,38 @@
+name: Release Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '17'
+
+    - name: Check for Release
+      run: |
+        VERSION=$(grep -oP '<version>\K[^<]+' pom.xml)
+        if [ ! -z "$VERSION" ]; then
+          if ! git rev-list "$VERSION" &>/dev/null; then
+            echo "Creating release for version $VERSION"
+            YEAR_MONTH=$(date +'%Y%m')
+            echo $YEAR_MONTH
+            git tag -a $YEAR_MONTH -m "Release $VERSION"
+            git push origin "$VERSION"
+          else
+            echo "Release $VERSION already exists."
+          fi
+        else
+          echo "No version found in pom.xml."
+        fi
