@@ -39,7 +39,7 @@ jobs:
         echo ${{ env.VERSION }}
         if [ ! -z "$VERSION" ]; then
           if ! git rev-list "$VERSION" &>/dev/null; then
-            YEAR_MONTH=$(date +'%Y%m')
+            YEAR_MONTH=$(date +'%Y/%m')
             echo $YEAR_MONTH
             echo "DATA=$YEAR_MONTH" >> $GITHUB_ENV
           else
@@ -48,6 +48,8 @@ jobs:
         else
           echo "No version found in pom.xml."
         fi
+    - name: package build
+      run: mvn package    
     - name: create release
       if: ${{ env.DATA != 'nuller' && env.VERSION != 'nuller' }}
       uses: softprops/action-gh-release@v1
@@ -55,5 +57,7 @@ jobs:
         tag_name: ${{ env.DATA }}
         name: ${{ env.VERSION }}
         body: hello
+        files: target/*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+    
