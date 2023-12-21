@@ -29,7 +29,7 @@ jobs:
         version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         # Imprimir la versión
         echo "La versión del artefacto es: $version"
-        echo "VERSION=$version" >> $env:GITHUB_ENV
+        echo "VERSION=$version" >> $GITHUB_ENV
         echo ${{ env.VERSION }}
     - name: test lectures
       run: |
@@ -42,7 +42,7 @@ jobs:
           if ! git rev-list "$VERSION" &>/dev/null; then
             YEAR_MONTH=$(date +'%Y%m')
             echo $YEAR_MONTH
-            echo "DATA=$YEAR_MONTH" >> $env:GITHUB_ENV
+            echo "DATA=$YEAR_MONTH" >> $GITHUB_ENV
           else
             echo "Release $VERSION already exists."
           fi
