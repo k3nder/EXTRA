@@ -29,6 +29,8 @@ jobs:
       run: |
         # Lee el contenido XML y realiza operaciones según sea necesario
         V=$(xmlstarlet sel -t -v "/project/version" -n pom.xml)
+        echo "V:"
+        echo $V
         echo "VERSION=$V" >> $env:GITHUB_ENV
     - name: Check for Release
       run: |
