@@ -8,6 +8,9 @@ on:
 
 jobs:
   release:
+    env:
+      DATA: "null"
+      VERSION: "null"
     runs-on: ubuntu-latest
 
     steps:
@@ -36,3 +39,13 @@ jobs:
         else
           echo "No version found in pom.xml."
         fi
+        
+    - name: create release
+      if: ${{ env.DATA != 'null' && env.VERSION != 'null' }}
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ env.DATA }}
+        name: ${{ env.VERSION }}
+        body: hello
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
