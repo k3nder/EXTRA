@@ -8,10 +8,11 @@ on:
 
 jobs:
   release:
+    runs-on: windows-latest
     env:
       DATA: nuller
       VERSION: nuller
-    runs-on: ubuntu-latest
+    
 
     steps:
     - name: Checkout Repository
