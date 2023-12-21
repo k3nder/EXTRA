@@ -9,8 +9,8 @@ on:
 jobs:
   release:
     env:
-      DATA: "nuller"
-      VERSION: "nuller"
+      DATA: nuller
+      VERSION: nuller
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,7 @@ jobs:
         fi
         
     - name: create release
-      if: ${{ env.DATA != "nuller" && env.VERSION != "nuller" }}
+      if: ${{ env.DATA != 'nuller' && env.VERSION != 'nuller' }}
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ env.DATA }}
