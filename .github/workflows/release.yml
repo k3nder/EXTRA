@@ -30,7 +30,7 @@ jobs:
         # Imprimir la versión
         echo "La versión del artefacto es: $version"
         echo "VERSION=$version" >> $GITHUB_ENV
-        echo ${{ env.VERSION }}
+        echo version: ${{ env.VERSION }}
     - name: test lectures
       run: |
         echo version: ${{ env.VERSION }}
