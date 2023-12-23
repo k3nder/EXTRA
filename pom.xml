@@ -21,26 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-<<<<<<< HEAD
 
-=======
-  <name>PEXTRAS</name> 
-
-  <developers>
-    <developer>
-      <email>kristiazvezdakris@gmail.com</email>
-      <name>kristian plamenov parvanov</name>
-      <id>1ESOD</id>
-      <organization>Beatriu fajardo mendoza</organization>
-    </developer>
-  </developers>
-  <repositories>
-    <repository>
-        <id>github</id>
-        <url>https://maven.pkg.github.com/k3nder/kutils</url>
-    </repository>
-</repositories>
->>>>>>> 08a6f5ef90e4f1c132d75dd3f14117b60f7d8cfc
 
 	<dependencies>
 		<!--
@@ -87,9 +68,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<<<<<<< HEAD
 </project>
-=======
-</project>
- 
->>>>>>> 08a6f5ef90e4f1c132d75dd3f14117b60f7d8cfc
