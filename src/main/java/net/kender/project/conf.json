@@ -1,0 +1,39 @@
+{
+    "Classes": [
+        {
+            "package": "net.kender.project.Uno.Uno",
+            "name": "primer projecto",
+            "number": 1
+        },
+        {
+            "package": "net.kender.project.Dos.Dos",
+            "name": "segundo projecto",
+            "number": 2
+        },
+        {
+            "package": "net.kender.project.Tres.Tres",
+            "name": "tercer projecto",
+            "number": 3
+        },
+        {
+            "package": "net.kender.project.Quatro.Quatro",
+            "name": "quarto projecto",
+            "number": 4
+        },
+        {
+            "package": "net.kender.project.Cinco.Cinco",
+            "name": "quinto projecto",
+            "number": 5
+        },
+        {
+            "package": "net.kender.project.Seis.Seis",
+            "name": "sexto projecto",
+            "number": 6
+        },
+        {
+            "package": "net.kender.project.Siete.Siete",
+            "name": "septimo porjecto",
+            "number": 7
+        }
+    ]
+}

@@ -1,7 +1,5 @@
 package net.kender.project.Siete;
-
-import net.kristian.objects.NumScanner;
-
+import net.kender.Utils.NumScanner;
 public class Siete {
 	public static void main(String[] args) {
 		System.out.println("\r\n"
