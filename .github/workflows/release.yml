@@ -48,8 +48,6 @@ jobs:
         else
           echo "No version found in pom.xml."
         fi
-    - name: package build
-      run: mvn package    
     - name: create release
       if: ${{ env.DATA != 'nuller' && env.VERSION != 'nuller' }}
       uses: softprops/action-gh-release@v1
@@ -57,7 +55,6 @@ jobs:
         tag_name: ${{ env.DATA }}
         name: ${{ env.VERSION }}
         body: hello
-        files: target/*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
     
