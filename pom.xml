@@ -7,6 +7,7 @@
 	<artifactId>project</artifactId>
 	<version>1.3.0</version>
 	<packaging>jar</packaging>
+<<<<<<< HEAD
 	<description>
         <![CDATA[
         1. Realizar un programa que acumule (sume) valores ingresados por teclado hasta
@@ -26,6 +27,9 @@
         b) La suma total de los saldos acreedores.
         ]]>
     </description>
+=======
+	<description>desc</description>
+>>>>>>> db1cce78ea66f4fbd523db23ec21c1271ba0a7f5
 
 	<developers>
 		<developer>
@@ -87,4 +91,8 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+<<<<<<< HEAD
 </project>
+=======
+</project>
+>>>>>>> db1cce78ea66f4fbd523db23ec21c1271ba0a7f5

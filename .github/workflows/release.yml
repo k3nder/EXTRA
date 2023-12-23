@@ -12,7 +12,7 @@ jobs:
     env:
       DATA: nuller
       VERSION: nuller
-    
+      DESC: nuller
 
     steps:
     - name: Checkout Repository
@@ -31,8 +31,11 @@ jobs:
         echo "La versión del artefacto es: $version"
         echo "VERSION=$version" >> $GITHUB_ENV
         echo version: ${{ env.VERSION }}
+        de=$(mvn help:evaluate -Dexpression=project.description -q -DforceStdout)
+        echo "DESC=$de" >> $GITHUB_ENV
     - name: test lectures
       run: |
+        echo desc: ${{ env.DESC }}
         echo version: ${{ env.VERSION }}
     - name: Check for Release
       run: |
@@ -48,16 +51,13 @@ jobs:
         else
           echo "No version found in pom.xml."
         fi
-    - name: package build
-      run: mvn package    
     - name: create release
       if: ${{ env.DATA != 'nuller' && env.VERSION != 'nuller' }}
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ env.DATA }}
         name: ${{ env.VERSION }}
-        body: hello
-        files: target/*.jar
+        body: ${{ env.DESC }}
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
     
