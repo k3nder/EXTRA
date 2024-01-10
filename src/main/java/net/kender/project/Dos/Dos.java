@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import net.k3nder.Runner.Runner;
 import net.kender.logger.log5k.Logger;
 import net.kender.logger.log5k.conf.CustomLogger;
 import net.kender.logger.log5k.conf.log5kConf;
@@ -25,7 +26,7 @@ public class Dos {
 		
 		
 		
-		Scanner scan = new Scanner(System.in);
+		Scanner scan = Runner.scan;
 		Map<Integer,Cuenta> map = Cuenta.load(new File(Dos.class.getResource("cuentas.json").getFile()));
 		do {
 			log.debug("suma total de los saldos " + Estado.Acreedor + " " + Cuenta.TotalAcreedor);
@@ -37,7 +38,6 @@ public class Dos {
 			Cuenta select = map.get(cn);
 			select.print(log,new CustomLogger("\u001B[36;1m","TABLE",true,false,true,false,false));
 		} while(true);
-		scan.close();
 	}
 }
 class Cuenta{
