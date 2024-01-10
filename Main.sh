@@ -1,2 +1,2 @@
 #! /bin/bash
-java -cp target/classes net.kender.project.App
+./mvnw exec:java -Dexec.mainClass="net.kender.project.App"

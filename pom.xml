@@ -63,7 +63,7 @@
 		<dependency>
 			<groupId>io.github.k3nder</groupId>
 			<artifactId>log5k</artifactId>
-			<version>1.2.0</version>
+			<version>1.2.1</version>
 		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->

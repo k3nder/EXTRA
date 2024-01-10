@@ -20,7 +20,7 @@ public class Uno {
 			acum = acum + num;
 		} while(acum < 9999);
 		scan.close();
-		log.DEBUG("Acumulado: " + acum);
+		log.debug("Acumulado: " + acum);
 	}
 
 }

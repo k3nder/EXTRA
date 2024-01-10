@@ -28,7 +28,7 @@ public class Dos {
 		Scanner scan = new Scanner(System.in);
 		Map<Integer,Cuenta> map = Cuenta.load(new File(Dos.class.getResource("cuentas.json").getFile()));
 		do {
-			log.DEBUG("suma total de los saldos " + Estado.Acreedor + " " + Cuenta.TotalAcreedor);
+			log.debug("suma total de los saldos " + Estado.Acreedor + " " + Cuenta.TotalAcreedor);
 			log.log("introduce la id de la cuenta: ", input);
 			int cn = scan.nextInt();
 			if(cn < 0) {
