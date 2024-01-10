@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.kender</groupId>
+	<artifactId>project</artifactId>
+	<version>1.3.0</version>
+	<packaging>jar</packaging>
+	<description>
+        <![CDATA[
+        1. Realizar un programa que acumule (sume) valores ingresados por teclado hasta
+        ingresar el 9999 (no sumar dicho valor, indica que ha finalizado la carga). Imprimir
+        el valor acumulado e informar si dicho valor es cero, mayor a cero o menor a cero.
+
+        2. En un banco se procesan datos de las cuentas corrientes de sus clientes. De cada
+        cuenta corriente se conoce: número de cuenta y saldo actual. El ingreso de datos
+        debe finalizar al ingresar un valor negativo en el número de cuenta.
+        Se pide confeccionar un programa que lea los datos de las cuentas corrientes e
+        informe:
+        a) De cada cuenta: número de cuenta y estado de la cuenta según su saldo,
+        sabiendo que:
+        - Estado de la cuenta 'Acreedor' si el saldo es >0.
+        - 'Deudor' si el saldo es <0.
+        - 'Nulo' si el saldo es =0.
+        b) La suma total de los saldos acreedores.
+        ]]>
+    </description>
+
+	<developers>
+		<developer>
+			<name>kristian</name>
+			<email>kristianzvezdakris@gmail.com</email>
+		</developer>
+	</developers>
+
+	<name>project</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<dependencies>
+		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.k3nder</groupId>
+			<artifactId>kutils</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.k3nder</groupId>
+			<artifactId>runner</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.k3nder</groupId>
+			<artifactId>log5k</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
