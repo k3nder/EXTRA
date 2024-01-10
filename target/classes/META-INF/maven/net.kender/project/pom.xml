@@ -38,6 +38,8 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -87,4 +89,25 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+    <plugins>
+        <!-- ... Otros plugins ... -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <mainClass>net.kender.project.App</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 </project>
