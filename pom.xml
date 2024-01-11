@@ -105,6 +105,8 @@
             </executions>
             <configuration>
                 <mainClass>net.kender.project.App</mainClass>
+		<source>11</source> <!-- Versión de Java que deseas utilizar -->
+                <target>11</target>
             </configuration>
         </plugin>
     </plugins>
