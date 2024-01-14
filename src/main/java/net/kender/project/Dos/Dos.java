@@ -2,6 +2,7 @@ package net.kender.project.Dos;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,9 +47,27 @@ class Cuenta{
 	public Integer saldo;
 	
 	public static Integer TotalAcreedor = 0;
+	private Cuenta() {}
+	public static Cuenta news(Integer saldo,Integer ID) {
+		Cuenta cuenta = new Cuenta();
+		cuenta.saldo = saldo;
+		cuenta.NumeroDeCuenta = ID;
+		return cuenta;
+	}
 	
 	public static Map<Integer,Cuenta> load(File s) throws IOException{
-		i i = new ObjectMapper().readValue(s,i.class);
+		i i = new i();
+		Scanner scan = Runner.scan;
+		do {
+			System.out.print("introduce nueva Id: ");
+			Integer id = scan.nextInt();
+			if(id < 0) {
+				break;
+			}
+			System.out.print("introduce un saldo: ");
+			Integer saldo = scan.nextInt();
+			i.Cuentas.add(Cuenta.news(saldo, id));
+		} while(true);
 		Map<Integer,Cuenta> map = new HashMap<Integer,Cuenta>();
 		for(Cuenta l : i.Cuentas) {
 			if(l.saldo < 0) {
@@ -88,7 +107,7 @@ class Cuenta{
 	}
 }
 class i{
-	public List<Cuenta> Cuentas;
+	public List<Cuenta> Cuentas = new ArrayList<Cuenta>();
 }
 enum Estado{
 	Acreedor,
